@@ -25,7 +25,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #262626;
+  background:hsl(213, 23%, 6%);
   min-height: 100vh;
   overflow: hidden;
 }
@@ -68,7 +68,7 @@ section {
 }
 
 .movie-night {
-  background: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  background: linear-gradient(225deg, hsl(224,64%,33%) 0%, hsl(216,22%,4%) 50%, #2b86c5 100%);
 }
 
 .btn {
@@ -80,7 +80,7 @@ section {
   border-radius: 4px;
   outline: none;
   text-decoration: none;
-  color: #784ba0;
+  color: hsl(180,20%, 1%);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -160,10 +160,10 @@ section {
   font-size: 0.8rem;
   font-weight: 700;
   font-family: inherit;
-  background: rgba(255, 255, 255, 0.095);
+  background-clip: text;
   box-shadow: inset 2px -2px 20px rgba(214, 214, 214, 0.2),
     inset -3px 3px 3px rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(74px);
+  backdrop-filter: blur(10px);
 }
 
 .overlay h2 {
@@ -177,134 +177,6 @@ section {
   margin: 0 0 20px 20px;
 }
 
-/* ANIMATED BACKGROUND */
-
-.circles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.circles li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 20px;
-  height: 20px;
-  background-color: #ff3cac;
-  background-image: linear-gradient(
-    225deg,
-    #ff3cac 0%,
-    #784ba0 50%,
-    #2b86c5 100%
-  );
-  animation: animate 25s linear infinite;
-  bottom: -150px;
-}
-
-.circles li:nth-child(1) {
-  left: 25%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 0s;
-}
-
-.circles li:nth-child(2) {
-  left: 10%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 2s;
-  animation-duration: 12s;
-}
-
-.circles li:nth-child(3) {
-  left: 70%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 4s;
-}
-
-.circles li:nth-child(4) {
-  left: 40%;
-  width: 60px;
-  height: 60px;
-  animation-delay: 0s;
-  animation-duration: 18s;
-}
-
-.circles li:nth-child(5) {
-  left: 65%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 0s;
-}
-
-.circles li:nth-child(6) {
-  left: 75%;
-  width: 110px;
-  height: 110px;
-  animation-delay: 3s;
-}
-
-.circles li:nth-child(7) {
-  left: 35%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 7s;
-}
-
-.circles li:nth-child(8) {
-  left: 50%;
-  width: 25px;
-  height: 25px;
-  animation-delay: 15s;
-  animation-duration: 45s;
-}
-
-.circles li:nth-child(9) {
-  left: 20%;
-  width: 15px;
-  height: 15px;
-  animation-delay: 2s;
-  animation-duration: 35s;
-}
-
-.circles li:nth-child(10) {
-  left: 85%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 0s;
-  animation-duration: 11s;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
-  }
-
-  100% {
-    transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
-    border-radius: 50%;
-  }
-}
-
-/*
-@media (max-width: 750px) {
-  .content {
-     flex-direction: column-reverse;
-  }
-  
-  .btn {
-    margin: 10px auto 40px;
-  }
-}
-*/
     </style>
   </head>
   <body>
@@ -325,111 +197,98 @@ section {
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/b6f5eb64-887c-43b1-aaba-d52a4c59a379"
+                  src="https://c4.wallpaperflare.com/wallpaper/111/534/500/concept-art-venom-men-erik-diziron-wallpaper-preview.jpg"
                   alt="" />
                 <div class="overlay">
-                  <span>8.5</span>
-                  <h2>The Queen's Gambit</h2>
+                  <span>Marvel</span>
+                  <h2>Venom</h2>
                 </div>
               </div>
   
               <div class="swiper-slide">
                 <img
                   class="img-position"
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e906353b-fde0-4518-9a03-16545c1161bd"
+                  src="https://i.pinimg.com/736x/52/33/81/5233813f830a4d271088369c11df0d52.jpg"
                   alt="" />
                 <div class="overlay">
-                  <span>9.5</span>
-                  <h2>Breaking Bad</h2>
+                  <span>Marvel</span>
+                  <h2>Iron Man</h2>
                 </div>
               </div>
   
               <div class="swiper-slide">
                 <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/fc21e481-e28a-41a8-9db3-3b62c1ddc17e"
+                  src="https://w0.peakpx.com/wallpaper/304/218/HD-wallpaper-captain-america-marcel-marvel-universe-superheroes.jpg"
                   alt="" />
                 <div class="overlay">
-                  <span>8.1</span>
-                  <h2>Wednesday</h2>
+                  <span>Marvel</span>
+                  <h2>Captain America</h2>
                 </div>
               </div>
   
               <div class="swiper-slide">
                 <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/6b6ad966-79e1-4d3c-8f92-566d0fee8082"
+                  src="https://e1.pxfuel.com/desktop-wallpaper/443/558/desktop-wallpaper-26-thor-iphone-thor-android.jpg"
                   alt="" />
                 <div class="overlay">
-                  <span>8.7</span>
-                  <h2>Stranger Things</h2>
+                  <span>Marvel</span>
+                  <h2>Thor</h2>
                 </div>
               </div>
   
               <div class="swiper-slide">
                 <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2ad44f5d-2215-4416-9c9b-2bae3be51a67"
+                  src="https://i.pinimg.com/474x/b9/38/a2/b938a2d85a0ae910ed2f877ce66a3b54.jpg"
                   alt="" />
                 <div class="overlay">
-                  <span>8.6</span>
-                  <h2>Anne with an E</h2>
+                  <span>Marvel</span>
+                  <h2>Moon Knight</h2>
                 </div>
               </div>
   
               <div class="swiper-slide">
                 <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/aa8fe914-741f-4bf4-ad4a-24f19d1f4178"
+                  src="https://is.zobj.net/image-server/v1/images?r=SPCbGflC586cpButnrcQc1-2z06j1wmrUn6rohI76kNukDlMmw5-gFuAZYHavrabIqvHMPe1Lu1wtZnDfLXa9h_DXBzissjSTyVq7psvuM15YfnUxLhMIAGw_hMd2Pxg7_YJblC1X2LxWGvUXfljaT1gCJaoSUFlXOfutVNERaXlJ9zAviipMaBTqcwdwSIlQkU4R7kA0DYw6injWJ4v4mFzIpoj8Xbd9-z1Auv74eKXED-K2X-OIQukPRc"
                   alt="" />
                 <div class="overlay">
-                  <span>8.9</span>
-                  <h2>Friends</h2>
+                  <span>Marvel</span>
+                  <h2>Thanos</h2>
                 </div>
               </div>
   
               <div class="swiper-slide">
                 <img
                   class="img-position"
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/d5f10b4f-7d34-45bd-bb5f-5f1530c2ac1c"
+                  src="https://www.bhmpics.com/downloads/crying-groot-Wallpapers/19.5c4b376b78cb48d8f76edd9a56f3823d.jpg"
                   alt="" />
                 <div class="overlay">
-                  <span>8.6</span>
-                  <h2>The Crown</h2>
+                  <span>Marvel</span>
+                  <h2>Groot</h2>
                 </div>
               </div>
   
               <div class="swiper-slide">
                 <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/7cbac263-7c55-4428-908e-31018dc1bce3"
+                  src="https://e0.pxfuel.com/wallpapers/701/766/desktop-wallpaper-movie-of-the-week-black-panther-mobile-211-black-panther-marvel-black-panther-art-panther.jpg"
                   alt="" />
                 <div class="overlay">
-                  <span>8.7</span>
-                  <h2>House M.D.</h2>
+                  <span>Marvel</span>
+                  <h2>Black Panthar</h2>
                 </div>
               </div>
   
               <div class="swiper-slide">
                 <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2929f534-3bc3-4cbd-b84c-80df863d5a38"
+                  src="https://i.pinimg.com/736x/55/80/13/55801353bd5b0140bdc590bc8ba52d56--spiderman-comic-spiderman-spiderman.jpg"
                   alt="" />
                 <div class="overlay">
-                  <span>9.2</span>
-                  <h2>Game of Thrones</h2>
+                  <span>Marvel</span>
+                  <h2>SpiderMan</h2>
                 </div>
               </div>
             </div>
           </div>
         </div>
-  
-        <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
       </section>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>

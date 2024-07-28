@@ -9,7 +9,7 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
       *,
       *::before,
@@ -21,13 +21,18 @@
       }
 
       #swipe-card {
-        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: hsl(213, 23%, 6%);
+        background: linear-gradient(
+          225deg,
+          hsl(224, 64%, 33%),
+          hsl(216, 22%, 4%),
+          #2b86c5
+        );
         min-height: 100vh;
         overflow: hidden;
+        padding: 20px;
       }
 
       .content {
@@ -35,29 +40,45 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 30px;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.28) 0%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        backdrop-filter: blur(30px);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
         border-radius: 20px;
-        width: min(900px, 100%);
-        box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
-          0 1px 0 0 rgba(255, 255, 255, 0.66) inset,
-          0 4px 16px rgba(0, 0, 0, 0.12);
-        z-index: 10;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        padding: 20px;
+      }
+
+      .content::before {
+        content: "";
+        position: absolute;
+        left: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.5),
+          transparent
+        );
+        width: 200%;
+        height: 100%;
+        z-index: 0;
+        transition: 0.5s;
+      }
+
+      .content:hover::before {
+        left: -100%;
       }
 
       .info {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         max-width: 450px;
-        padding: 0 35px;
+        padding: 20px;
         text-align: justify;
+        z-index: 1;
       }
 
       .info p {
@@ -69,12 +90,7 @@
       }
 
       .movie-night {
-        background: linear-gradient(
-          225deg,
-          hsl(224, 64%, 33%) 0%,
-          hsl(216, 22%, 4%) 50%,
-          #2b86c5 100%
-        );
+        color: #ffd700;
       }
 
       .btn {
@@ -117,19 +133,18 @@
         }
       }
 
-      /* SWIPER */
-
       .swiper {
         width: 250px;
         height: 450px;
         padding: 50px 0;
+        z-index: 1;
       }
 
       .swiper-slide {
         position: relative;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
-        user-select: none;
+        overflow: hidden;
       }
 
       .swiper-slide img {
@@ -165,7 +180,6 @@
         letter-spacing: 2px;
         font-size: 0.8rem;
         font-weight: 700;
-        font-family: inherit;
         background-clip: text;
         box-shadow: inset 2px -2px 20px rgba(214, 214, 214, 0.2),
           inset -3px 3px 3px rgba(255, 255, 255, 0.4);
@@ -181,6 +195,36 @@
         font-size: 1.1rem;
         line-height: 1.4;
         margin: 0 0 20px 20px;
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 10px;
+        }
+
+        .info {
+          max-width: 100%;
+          padding: 20px;
+          align-items: center;
+        }
+
+        .swiper {
+          width: 100%;
+          max-width: 300px;
+          height: 300px;
+          padding: 20px 0;
+        }
+
+        .swiper-slide {
+          height: 250px;
+        }
+
+        .overlay h2 {
+          font-size: 1rem;
+        }
       }
     </style>
   </head>
@@ -320,8 +364,8 @@
           invert: false,
         },
         autoplay: {
-          delay: 3000, // Delay between transitions (in milliseconds)
-          disableOnInteraction: false, // Autoplay won't be disabled after user interactions
+          delay: 3000,
+          disableOnInteraction: false, 
         },
       });
     </script>

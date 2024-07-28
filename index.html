@@ -6,7 +6,7 @@
     <title>Avengers</title>
     <link
       rel="shortcut icon"
-      href="assets/images/logo/favicon.png"
+      href="assets/images/logo/logo.png"
       type="image/x-icon"
     />
     <link
@@ -20,6 +20,16 @@
       crossorigin="anonymous"
     ></script>
     <style>
+      :root {
+        --color-primary: #1d1f21;
+        --color-secondary: #121314;
+        --color-accent: #006dff;
+        --color-text: #eaeaea;
+        --color-hover: #003f88;
+        --color-nav-background: #1b1c1e;
+        --color-background: #141516;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -33,12 +43,18 @@
 
       body {
         font-family: Arial, sans-serif;
-        background: #f4f4f4;
+        background: var(--color-background);
+        color: var(--color-text);
       }
 
       a {
         text-decoration: none;
-        color: #333;
+        color: var(--color-accent);
+        transition: color 0.3s;
+      }
+
+      a:hover {
+        color: var(--color-hover);
       }
 
       li {
@@ -85,7 +101,7 @@
         position: relative;
         width: 30px;
         height: 3px;
-        background: yellow;
+        background: var(--color-text);
         display: block;
         transition: all 0.3s ease-in-out;
       }
@@ -100,14 +116,14 @@
       }
 
       .menu-icon span::before {
-        background: red;
+        background: var(--color-text);
         width: 35px;
         transform: translateY(-10px);
       }
 
       .menu-icon span::after {
         width: 25px;
-        background: blue;
+        background: var(--color-text);
         transform: translateY(10px);
       }
 
@@ -117,7 +133,7 @@
         top: 0;
         width: 350px;
         right: -350px;
-        background: #fff;
+        background: var(--color-nav-background);
         transition: right 0.3s ease-in-out;
         padding: 40px 30px;
       }
@@ -126,7 +142,11 @@
         font-size: 2.5rem;
         font-weight: 700;
         font-family: "Monoton", cursive;
-        background: linear-gradient(-90deg, #49a4ed 30%, #3d00a9 110%);
+        background: linear-gradient(
+          -90deg,
+          var(--color-accent) 30%,
+          var(--color-hover) 110%
+        );
         -webkit-background-clip: text;
         color: transparent;
       }
@@ -145,12 +165,11 @@
       .offcanvas-menu li a {
         font-size: 2rem;
         font-weight: 400;
-        color: #333;
-        transition: color 0.3s;
+        color: var(--color-text);
       }
 
       .offcanvas-menu li a:hover {
-        color: #49a4ed;
+        color: var(--color-hover);
       }
 
       .offcanvas-menu input[type="checkbox"] {
@@ -164,14 +183,15 @@
       .offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::before {
         transform: rotate(45deg);
         top: 0;
-        background: green;
+        background: var(--color-accent);
         width: 30px;
       }
 
       .offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::after {
         transform: rotate(-45deg);
-        top: 0;width: 30px;
-        background: orange;
+        top: 0;
+        width: 30px;
+        background: var(--color-hover);
       }
 
       .offcanvas-menu input[type="checkbox"]:checked ~ nav {
@@ -203,13 +223,12 @@
         width: 50px;
       }
 
-      /* New CSS */
       #navigationbar {
         position: fixed;
         top: 0;
         width: 100%;
         min-height: 70px;
-        background: white;
+        background: var(--color-nav-background);
         z-index: 999;
         transition: box-shadow 0.3s ease;
       }
@@ -217,49 +236,56 @@
       .scrolled {
         box-shadow: 0 0 10px rgba(0, 0, 0, 1);
       }
+
+      .content-section {
+        height: 100vh;
+        background: var(--color-secondary);
+      }
     </style>
   </head>
   <body>
     <section id="navigationbar">
       <a href="#" class="logo"
-      ><img
-        src="assets/images/logo/logo.png"
-        alt="Avengers Logo"
-        class="logo-img"
-    /></a>
-    <header class="offcanvas-menu">
-      <input type="checkbox" id="toggle-menu" />
-      <label for="toggle-menu" class="menu-icon">
-        <span></span>
-      </label>
-      <nav>
-        <div class="nav-header">
-          <a href="#"
-            ><img
-              src="assets/images/logo/logo.png"
-              class="img-fluid"
-              alt="Logo"
-          /></a>
-        </div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Characters</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+        ><img
+          src="assets/images/logo/logo.png"
+          alt="Avengers Logo"
+          class="logo-img"
+      /></a>
+      <header class="offcanvas-menu">
+        <input type="checkbox" id="toggle-menu" />
+        <label for="toggle-menu" class="menu-icon">
+          <span></span>
+        </label>
+        <nav>
+          <div class="nav-header">
+            <a href="#"
+              ><img
+                src="assets/images/logo/logo.png"
+                class="img-fluid"
+                alt="Logo"
+            /></a>
+          </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Characters</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
     </section>
-    <section style="height: 100vh;background: yellow;"></section>
-    <section style="height: 100vh;background: gray;"></section>
+    <section class="content-section"></section>
+    <section class="content-section"></section>
 
     <script>
-      document.querySelectorAll(".offcanvas-menu nav ul li").forEach((li, index) => {
-        li.style.setProperty("--i", index + 1);
-      });
+      document
+        .querySelectorAll(".offcanvas-menu nav ul li")
+        .forEach((li, index) => {
+          li.style.setProperty("--i", index + 1);
+        });
 
-      window.addEventListener("scroll", function() {
+      window.addEventListener("scroll", function () {
         const nav = document.getElementById("navigationbar");
         if (window.scrollY > 0) {
           nav.classList.add("scrolled");

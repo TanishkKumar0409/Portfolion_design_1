@@ -15,233 +15,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/css/style.css">
     <script
       src="https://kit.fontawesome.com/87f0afa689.js"
       crossorigin="anonymous"
     ></script>
-    <style>
-      :root {
-        --color-primary: #1d1f21;
-        --color-secondary: #121314;
-        --color-accent: #006dff;
-        --color-text: #eaeaea;
-        --color-hover: #003f88;
-        --color-nav-background: #1b1c1e;
-        --color-background: #141516;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        font-size: 10px;
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        background: var(--color-background);
-        color: var(--color-text);
-      }
-
-      a {
-        text-decoration: none;
-        color: var(--color-accent);
-        transition: color 0.3s;
-      }
-
-      a:hover {
-        color: var(--color-hover);
-      }
-
-      li {
-        list-style: none;
-      }
-
-      .logo {
-        position: relative;
-        top: 10px;
-        left: 10px;
-      }
-
-      .logo img {
-        width: 50px;
-        transition: transform 0.3s;
-      }
-
-      .logo img:hover {
-        transform: rotate(360deg);
-      }
-
-      .offcanvas-menu {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 9999;
-      }
-
-      .menu-icon {
-        position: relative;
-        top: 0;
-        right: 0;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .menu-icon span {
-        position: relative;
-        width: 30px;
-        height: 3px;
-        background: var(--color-text);
-        display: block;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .menu-icon span::before,
-      .menu-icon span::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .menu-icon span::before {
-        background: var(--color-text);
-        width: 35px;
-        transform: translateY(-10px);
-      }
-
-      .menu-icon span::after {
-        width: 25px;
-        background: var(--color-text);
-        transform: translateY(10px);
-      }
-
-      .offcanvas-menu nav {
-        position: fixed;
-        height: 100%;
-        top: 0;
-        width: 350px;
-        right: -350px;
-        background: var(--color-nav-background);
-        transition: right 0.3s ease-in-out;
-        padding: 40px 30px;
-      }
-
-      .offcanvas-menu nav a {
-        font-size: 2.5rem;
-        font-weight: 700;
-        font-family: "Monoton", cursive;
-        background: linear-gradient(
-          -90deg,
-          var(--color-accent) 30%,
-          var(--color-hover) 110%
-        );
-        -webkit-background-clip: text;
-        color: transparent;
-      }
-
-      .offcanvas-menu ul {
-        margin-top: 30px;
-      }
-
-      .offcanvas-menu li {
-        padding: 10px 0;
-        transform: translateX(30px);
-        opacity: 0;
-        transition: transform 0.4s, opacity 0.4s;
-      }
-
-      .offcanvas-menu li a {
-        font-size: 2rem;
-        font-weight: 400;
-        color: var(--color-text);
-      }
-
-      .offcanvas-menu li a:hover {
-        color: var(--color-hover);
-      }
-
-      .offcanvas-menu input[type="checkbox"] {
-        display: none;
-      }
-
-      .offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span {
-        background: transparent;
-      }
-
-      .offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::before {
-        transform: rotate(45deg);
-        top: 0;
-        background: var(--color-accent);
-        width: 30px;
-      }
-
-      .offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::after {
-        transform: rotate(-45deg);
-        top: 0;
-        width: 30px;
-        background: var(--color-hover);
-      }
-
-      .offcanvas-menu input[type="checkbox"]:checked ~ nav {
-        right: 0;
-      }
-
-      .offcanvas-menu input[type="checkbox"]:checked ~ nav ul li {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .offcanvas-menu input[type="checkbox"]:checked ~ nav ul li {
-        transition-delay: calc(0.1s * var(--i));
-      }
-
-      .nav-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 40px;
-      }
-
-      .nav-header a {
-        display: flex;
-        align-items: center;
-      }
-
-      .nav-header img {
-        width: 50px;
-      }
-
-      #navigationbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        min-height: 70px;
-        background: var(--color-nav-background);
-        z-index: 999;
-        transition: box-shadow 0.3s ease;
-      }
-
-      .scrolled {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-      }
-
-      .content-section {
-        height: 100vh;
-        background: var(--color-secondary);
-      }
-    </style>
   </head>
   <body>
     <section id="navigationbar">
@@ -250,7 +28,8 @@
           src="assets/images/logo/logo.png"
           alt="Avengers Logo"
           class="logo-img"
-      /></a>
+        />Avengers</a
+      >
       <header class="offcanvas-menu">
         <input type="checkbox" id="toggle-menu" />
         <label for="toggle-menu" class="menu-icon">
@@ -258,46 +37,43 @@
         </label>
         <nav>
           <div class="nav-header">
-            <a href="#"
+            <a href="#" class="logo"
               ><img
                 src="assets/images/logo/logo.png"
-                class="img-fluid"
-                alt="Logo"
-            /></a>
+                alt="Avengers Logo"
+                class="logo-img"
+              />Avengers</a
+            >
           </div>
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Characters</a></li>
+            <li><a href="#">Movies And Series</a></li>
+            <li><a href="#">Comics</a></li>
             <li><a href="#">Gallery</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">News and Updates</a></li>
+            <li><a href="#">Fan Community</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
         </nav>
       </header>
     </section>
-    <section class="content-section"></section>
-    <section class="content-section"></section>
 
-    <script>
-      document
-        .querySelectorAll(".offcanvas-menu nav ul li")
-        .forEach((li, index) => {
-          li.style.setProperty("--i", index + 1);
-        });
+    <section class="content-section">
+    </section>
 
-      window.addEventListener("scroll", function () {
-        const nav = document.getElementById("navigationbar");
-        if (window.scrollY > 0) {
-          nav.classList.add("scrolled");
-        } else {
-          nav.classList.remove("scrolled");
-        }
-      });
-    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

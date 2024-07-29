@@ -6,15 +6,15 @@
   --color-black: #000000; /* Pure Black */
   --color-primary: #000000; /* Primary color for background */
   --color-secondary: #121212; /* Slightly lighter black */
-  
+
   /* Infinity Stone Colors */
-  --color-space-stone: #003C71; /* Blue */
-  --color-mind-stone: #F7E23D; /* Yellow */
-  --color-reality-stone: #C8102E; /* Red */
-  --color-power-stone: #5E2A7B; /* Purple */
-  --color-time-stone: #1DFF00; /* Green */
-  --color-soul-stone: #F57F00; /* Orange */
-  
+  --color-space-stone: #003c71; /* Blue */
+  --color-mind-stone: #f7e23d; /* Yellow */
+  --color-reality-stone: #c8102e; /* Red */
+  --color-power-stone: #5e2a7b; /* Purple */
+  --color-time-stone: #1dff00; /* Green */
+  --color-soul-stone: #f57f00; /* Orange */
+
   --color-text: #ffffff; /* White text */
   --color-hover: #ff4747; /* Light red for hover effects */
   --color-nav-background: #000000; /* Black background for navigation */
@@ -65,10 +65,23 @@ li {
   top: 0;
   width: 100%;
   min-height: 70px;
-  background: url(../images/backgrounds/navback.jpg)center center;
-  background-size: 100% 400%;
   z-index: 999;
   transition: box-shadow 0.3s ease;
+  animation: background 5s infinite;
+}
+@keyframes background {
+  0%,100% {
+    background: url(https://1000logos.net/wp-content/uploads/2019/05/Symbol-Avengers.jpg) center center;
+    background-size: 100% 300%;
+  }
+  50% {
+    background: url(../images/backgrounds/navback.jpg) center center;
+    background-size: 100% 400%;
+  }
+  75% {
+    background: url(https://en.ephoto360.com/uploads/worigin/2019/06/03/Create_logo_3D_style_Avengers_online5cf4e529e9273_3968a9e7243d55480737a4a6fd259a11.jpg) center center;
+    background-size: 100% 500%;
+  }
 }
 
 #navigationbar.scrolled {
@@ -94,9 +107,20 @@ li {
 }
 
 .logo img:hover {
-  transform: rotate(360deg);
+  animation: pop 1s 1;
 }
 
+@keyframes pop {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  50% {
+    transform: scale(1.5) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
 /* Offcanvas Menu */
 .offcanvas-menu {
   position: fixed;
@@ -261,6 +285,6 @@ li {
 }
 
 .social-icons a:hover {
-  color: var(--color-hover);/* Using space stone color for hover effect */
+  color: var(--color-hover); /* Using space stone color for hover effect */
   transform: rotate(360deg) scale(1.2) translateY(-10px);
 }

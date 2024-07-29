@@ -12,3 +12,26 @@ window.addEventListener("scroll", function () {
      navigationbar.classList.remove("scrolled");
    }
  });
+
+ // Function to apply hover colors
+function applyHoverColors(selector, colors) {
+  document.querySelectorAll(selector)
+    .forEach((element, index) => {
+      // Cycle through colors using modulo
+      const colorIndex = index % colors.length;
+      element.style.setProperty('--color-hover', `var(${colors[colorIndex]})`);
+    });
+}
+
+// Colors for navigation items and social links
+const hoverColors = [
+  "--color-hover-1",
+  "--color-hover-2",
+  "--color-hover-3",
+  "--color-hover-4",
+  "--color-hover-5",
+  "--color-hover-6"
+];
+
+applyHoverColors("#navigationbar li a", hoverColors);
+applyHoverColors(".social-icons a", hoverColors);

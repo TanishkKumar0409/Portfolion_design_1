@@ -23,6 +23,13 @@
   --font-mammli: "Ga Maamli", sans-serif;
   --font-bebas: "Bebas Neue", sans-serif;
   --font-libre: "Libre Franklin", sans-serif;
+
+  --color-hover-1: var(--color-space-stone); /* Blue */
+  --color-hover-2: var(--color-mind-stone); /* Yellow */
+  --color-hover-3: var(--color-reality-stone); /* Red */
+  --color-hover-4: var(--color-power-stone); /* Purple */
+  --color-hover-5: var(--color-time-stone); /* Green */
+  --color-hover-6: var(--color-soul-stone); /* Orange */
 }
 
 /* General Styles */
@@ -58,7 +65,8 @@ li {
   top: 0;
   width: 100%;
   min-height: 70px;
-  background: var(--color-nav-background);
+  background: url(../images/backgrounds/navback.jpg)center center;
+  background-size: 100% 400%;
   z-index: 999;
   transition: box-shadow 0.3s ease;
 }
@@ -253,6 +261,6 @@ li {
 }
 
 .social-icons a:hover {
-  color: var(--color-space-stone); /* Using space stone color for hover effect */
+  color: var(--color-hover);/* Using space stone color for hover effect */
   transform: rotate(360deg) scale(1.2) translateY(-10px);
 }

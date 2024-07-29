@@ -1,19 +1,31 @@
+/* Importing Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Ga+Maamli&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Root Variables */
 :root {
-  --color-black: #000000;
-  --color-primary: #1d1f21;
-  --color-secondary: #121314;
-  --color-accent: #7DF9FF;
-  --color-text: #eaeaea;
-  --color-hover: #00BFFF;
-  --color-nav-background: #1b1c1e;
-  --color-background: #141516;
+  --color-black: #000000; /* Pure Black */
+  --color-primary: #000000; /* Primary color for background */
+  --color-secondary: #121212; /* Slightly lighter black */
+  
+  /* Infinity Stone Colors */
+  --color-space-stone: #003C71; /* Blue */
+  --color-mind-stone: #F7E23D; /* Yellow */
+  --color-reality-stone: #C8102E; /* Red */
+  --color-power-stone: #5E2A7B; /* Purple */
+  --color-time-stone: #1DFF00; /* Green */
+  --color-soul-stone: #F57F00; /* Orange */
+  
+  --color-text: #ffffff; /* White text */
+  --color-hover: #ff4747; /* Light red for hover effects */
+  --color-nav-background: #000000; /* Black background for navigation */
+  --color-background: #000000; /* Pure black background */
   --font-edu: "Edu AU VIC WA NT Hand", cursive;
   --font-mammli: "Ga Maamli", sans-serif;
   --font-bebas: "Bebas Neue", sans-serif;
   --font-libre: "Libre Franklin", sans-serif;
 }
 
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -40,6 +52,22 @@ li {
   list-style: none;
 }
 
+/* Navigation Bar */
+#navigationbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 70px;
+  background: var(--color-nav-background);
+  z-index: 999;
+  transition: box-shadow 0.3s ease;
+}
+
+#navigationbar.scrolled {
+  box-shadow: 0 0 10px var(--color-text);
+}
+
+/* Logo */
 .logo {
   position: relative;
   top: 10px;
@@ -61,6 +89,7 @@ li {
   transform: rotate(360deg);
 }
 
+/* Offcanvas Menu */
 .offcanvas-menu {
   position: fixed;
   top: 20px;
@@ -68,6 +97,39 @@ li {
   z-index: 9999;
 }
 
+.offcanvas-menu input[type="checkbox"] {
+  display: none;
+}
+
+.offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span {
+  background: transparent;
+}
+
+.offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::before {
+  transform: rotate(45deg);
+  top: 0;
+  background: var(--color-reality-stone); /* Red for the menu icon */
+  width: 30px;
+}
+
+.offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::after {
+  transform: rotate(-45deg);
+  top: 0;
+  width: 30px;
+  background: var(--color-hover);
+}
+
+.offcanvas-menu input[type="checkbox"]:checked ~ nav {
+  right: 0;
+}
+
+.offcanvas-menu input[type="checkbox"]:checked ~ nav ul li {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+/* Menu Icon */
 .menu-icon {
   position: relative;
   top: 0;
@@ -112,6 +174,7 @@ li {
   transform: translateY(10px);
 }
 
+/* Offcanvas Menu Navigation */
 .offcanvas-menu nav {
   position: fixed;
   height: 100%;
@@ -124,12 +187,8 @@ li {
 }
 
 .offcanvas-menu nav a {
-  font-size: 2.5rem;
-  font-weight: 700;
-  font-family: var(--font-bebas);
-
-  font-family: var(--font-bebas);
   font-size: 3rem;
+  font-family: var(--font-bebas);
   color: var(--color-text);
 }
 
@@ -154,44 +213,10 @@ li {
 
 .offcanvas-menu li a:hover {
   color: var(--color-hover);
-  margin-left:10px;
+  margin-left: 10px;
 }
 
-.offcanvas-menu input[type="checkbox"] {
-  display: none;
-}
-
-.offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span {
-  background: transparent;
-}
-
-.offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::before {
-  transform: rotate(45deg);
-  top: 0;
-  background: var(--color-accent);
-  width: 30px;
-}
-
-.offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::after {
-  transform: rotate(-45deg);
-  top: 0;
-  width: 30px;
-  background: var(--color-hover);
-}
-
-.offcanvas-menu input[type="checkbox"]:checked ~ nav {
-  right: 0;
-}
-
-.offcanvas-menu input[type="checkbox"]:checked ~ nav ul li {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.offcanvas-menu input[type="checkbox"]:checked ~ nav ul li {
-  transition-delay: calc(0.1s * var(--i));
-}
-
+/* Navigation Header */
 .nav-header {
   display: flex;
   justify-content: space-between;
@@ -212,26 +237,7 @@ li {
   margin-right: 10px;
 }
 
-#navigationbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  min-height: 70px;
-  background: url(../images/backgrounds/navback.jpg)center center no-repeat;
-  background-size: 100% 500%;
-  z-index: 999;
-  transition: box-shadow 0.3s ease;
-}
-
-.scrolled {
-  box-shadow: 0 0 10px var(--color-text);
-}
-
-.content-section {
-  height: 100vh;
-  background: var(--color-secondary);
-}
-
+/* Social Icons */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -243,10 +249,10 @@ li {
   font-size: 2rem;
   margin: 0 10px;
   transition: 0.5s ease;
-  transform: rotate(0deg)scale(0.5)translateY(0);
+  transform: rotate(0deg) scale(0.5) translateY(0);
 }
 
 .social-icons a:hover {
-  color: var(--color-accent);
-  transform: rotate(360deg)scale(1.2)translateY(-10px);
+  color: var(--color-space-stone); /* Using space stone color for hover effect */
+  transform: rotate(360deg) scale(1.2) translateY(-10px);
 }

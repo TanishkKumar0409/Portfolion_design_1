@@ -15,7 +15,7 @@ window.addEventListener("scroll", function () {
 function applyHoverColors(selector, colors) {
   document.querySelectorAll(selector).forEach((element, index) => {
     // Cycle through colors using modulo
-    const colorIndex = index % colors.length;
+    const colorIndex = (index+1) % colors.length;
     element.style.setProperty("--color-hover", `var(${colors[colorIndex]})`);
   });
 }

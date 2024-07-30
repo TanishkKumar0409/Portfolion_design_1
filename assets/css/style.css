@@ -64,29 +64,15 @@ li {
   position: fixed;
   top: 0;
   width: 100%;
-  min-height: 70px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
   z-index: 999;
+  background: url(https://en.ephoto360.com/uploads/worigin/2019/06/03/Create_logo_3D_style_Avengers_online5cf4e529e9273_3968a9e7243d55480737a4a6fd259a11.jpg)
+    center center;
+  background-size: 100% 300%;
   transition: box-shadow 0.3s ease;
-  animation: background 5s infinite;
 }
-@keyframes background {
-  0%,
-  100% {
-    background: url(https://1000logos.net/wp-content/uploads/2019/05/Symbol-Avengers.jpg)
-      center center;
-    background-size: 100% 300%;
-  }
-  50% {
-    background: url(../images/backgrounds/navback.jpg) center center;
-    background-size: 100% 400%;
-  }
-  75% {
-    background: url(https://en.ephoto360.com/uploads/worigin/2019/06/03/Create_logo_3D_style_Avengers_online5cf4e529e9273_3968a9e7243d55480737a4a6fd259a11.jpg)
-      center center;
-    background-size: 100% 500%;
-  }
-}
-
 #navigationbar.scrolled {
   box-shadow: 0 0 10px var(--color-text);
 }
@@ -109,7 +95,7 @@ li {
   margin-right: 10px;
 }
 
-.logo img:hover {
+.logo:hover img {
   animation: pop 1s 1;
 }
 
@@ -143,7 +129,7 @@ li {
 .offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::before {
   transform: rotate(45deg);
   top: 0;
-  background: var(--color-reality-stone); /* Red for the menu icon */
+  background: var(--color-hover-4); /* Red for the menu icon */
   width: 30px;
 }
 
@@ -151,7 +137,7 @@ li {
   transform: rotate(-45deg);
   top: 0;
   width: 30px;
-  background: var(--color-hover);
+  background: var(--color-hover-3);
 }
 
 .offcanvas-menu input[type="checkbox"]:checked ~ nav {
@@ -170,7 +156,7 @@ li {
   top: 0;
   right: 0;
   width: 40px;
-  height: 40px;
+  height: 70px;
   cursor: pointer;
   z-index: 9999;
   display: flex;
@@ -183,7 +169,7 @@ li {
   position: relative;
   width: 25px;
   height: 3px;
-  background: var(--color-text);
+  background: var(--color-hover-2);
   display: block;
   transition: all 0.3s ease-in-out;
 }
@@ -198,14 +184,14 @@ li {
 }
 
 .menu-icon span::before {
-  background: var(--color-text);
+  background: var(--color-hover-6);
   width: 35px;
   transform: translateY(-10px);
 }
 
 .menu-icon span::after {
   width: 20px;
-  background: var(--color-text);
+  background: var(--color-hover-5);
   transform: translateY(10px);
 }
 

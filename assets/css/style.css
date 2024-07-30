@@ -68,10 +68,12 @@ li {
   display: flex;
   align-items: center;
   z-index: 999;
-  background: url(https://en.ephoto360.com/uploads/worigin/2019/06/03/Create_logo_3D_style_Avengers_online5cf4e529e9273_3968a9e7243d55480737a4a6fd259a11.jpg)
+  background: url(../images/backgrounds/navback.png)
     center center;
   background-size: 100% 300%;
   transition: box-shadow 0.3s ease;
+  justify-content: space-between; /* Add this line */
+  padding: 0 20px; /* Add this line */
 }
 #navigationbar.scrolled {
   box-shadow: 0 0 10px var(--color-text);
@@ -110,11 +112,14 @@ li {
     transform: scale(1) rotate(0);
   }
 }
+
 /* Offcanvas Menu */
 .offcanvas-menu {
   position: fixed;
   top: 20px;
   right: 20px;
+  display: flex;
+  align-items: center;
   z-index: 9999;
 }
 
@@ -276,4 +281,16 @@ li {
 .social-icons a:hover {
   color: var(--color-hover); /* Using space stone color for hover effect */
   transform: rotate(360deg) scale(1.2) translateY(-10px);
+}
+
+/* User Icon */
+.user-icon {
+  font-size: 2rem;
+  color: var(--color-text);
+  cursor: pointer;
+  margin-left: 20px; /* Space between menu and user icon */
+}
+
+.user-icon:hover {
+  color: var(--color-hover);
 }

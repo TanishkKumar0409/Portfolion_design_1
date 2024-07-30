@@ -68,8 +68,7 @@ li {
   display: flex;
   align-items: center;
   z-index: 999;
-  background: url(../images/backgrounds/navback.png)
-    center center;
+  background: url(../images/backgrounds/navback.png) center center;
   background-size: 100% 300%;
   transition: box-shadow 0.3s ease;
   justify-content: space-between; /* Add this line */
@@ -168,6 +167,16 @@ li {
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:hover span{
+  background: var(--color-hover-5);
+}
+.menu-icon:hover span::after{
+  background: var(--color-hover-6);
+}
+.menu-icon:hover span::before{
+  background: var(--color-hover-2);
 }
 
 .menu-icon span {

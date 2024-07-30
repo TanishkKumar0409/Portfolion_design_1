@@ -133,7 +133,7 @@ li {
 .offcanvas-menu input[type="checkbox"]:checked ~ .menu-icon span::before {
   transform: rotate(45deg);
   top: 0;
-  background: var(--color-hover-4); /* Red for the menu icon */
+  background: var(--color-hover); /* Red for the menu icon */
   width: 30px;
 }
 
@@ -169,16 +169,6 @@ li {
   transition: transform 0.3s ease-in-out;
 }
 
-.menu-icon:hover span{
-  background: var(--color-hover-5);
-}
-.menu-icon:hover span::after{
-  background: var(--color-hover-6);
-}
-.menu-icon:hover span::before{
-  background: var(--color-hover-2);
-}
-
 .menu-icon span {
   position: relative;
   width: 25px;
@@ -207,6 +197,16 @@ li {
   width: 20px;
   background: var(--color-hover-5);
   transform: translateY(10px);
+}
+
+.menu-icon:hover span {
+  background: var(--color-hover-5);
+}
+.menu-icon:hover span::after {
+  background: var(--color-hover-6);
+}
+.menu-icon:hover span::before {
+  background: var(--color-hover-2);
 }
 
 /* Offcanvas Menu Navigation */
@@ -297,6 +297,7 @@ li {
   font-size: 2rem;
   color: var(--color-text);
   cursor: pointer;
+  transition: 0.5s;
   margin-left: 20px; /* Space between menu and user icon */
 }
 

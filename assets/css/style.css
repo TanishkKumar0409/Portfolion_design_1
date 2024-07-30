@@ -70,8 +70,10 @@ li {
   animation: background 5s infinite;
 }
 @keyframes background {
-  0%,100% {
-    background: url(https://1000logos.net/wp-content/uploads/2019/05/Symbol-Avengers.jpg) center center;
+  0%,
+  100% {
+    background: url(https://1000logos.net/wp-content/uploads/2019/05/Symbol-Avengers.jpg)
+      center center;
     background-size: 100% 300%;
   }
   50% {
@@ -79,7 +81,8 @@ li {
     background-size: 100% 400%;
   }
   75% {
-    background: url(https://en.ephoto360.com/uploads/worigin/2019/06/03/Create_logo_3D_style_Avengers_online5cf4e529e9273_3968a9e7243d55480737a4a6fd259a11.jpg) center center;
+    background: url(https://en.ephoto360.com/uploads/worigin/2019/06/03/Create_logo_3D_style_Avengers_online5cf4e529e9273_3968a9e7243d55480737a4a6fd259a11.jpg)
+      center center;
     background-size: 100% 500%;
   }
 }

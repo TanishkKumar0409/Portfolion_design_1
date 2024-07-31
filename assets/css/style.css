@@ -294,7 +294,7 @@ li {
 
 /* User Icon */
 .user-icon {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--color-text);
   cursor: pointer;
   transition: 0.5s;

@@ -304,8 +304,8 @@ li {
 .user-icon:hover {
   color: var(--color-hover);
 }
-@media (max-width:991px) {
-  .logo span{
+@media (max-width: 991px) {
+  .logo span {
     display: none;
   }
 }

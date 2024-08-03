@@ -372,32 +372,32 @@ li {
 }
 
 .hero-item:nth-child(1) {
-  background-image: url("https://e0.pxfuel.com/wallpapers/611/327/desktop-wallpaper-moon-knight-top-best-moon-knight-background-moon-khight-thumbnail.jpg");
+  background-image: url("../images/backgrounds/moonKnight.jpg");
   background-position: 52% 35%;
 }
 
 .hero-item:nth-child(2) {
-  background-image: url("https://w0.peakpx.com/wallpaper/384/205/HD-wallpaper-new-thor-avengers-endgame-thor-superheroes-artwork-digital-art-avengers-endgame.jpg");
+  background-image: url("../images/backgrounds/thor.jpg");
   background-position: 60% 8%;
 }
 
 .hero-item:nth-child(3) {
-  background-image: url("https://images.hdqwalls.com/wallpapers/captain-america-worthy-6v.jpg");
+  background-image: url("../images/backgrounds/captain.jpg");
   background-position: 52% 8%;
 }
 
 .hero-item:nth-child(4) {
-  background-image: url("https://images.hdqwalls.com/download/iron-man-come-by-us-1440x900.jpg");
+  background-image: url("../images/backgrounds/ironMan.jpg");
   background-position: 45% 8%;
 }
 
 .hero-item:nth-child(5) {
-  background-image: url("https://w0.peakpx.com/wallpaper/77/996/HD-wallpaper-video-game-black-panther-marvel-comics-fortnite.jpg");
+  background-image: url("../images/backgrounds/blackPanther.jpg");
   background-position: 45% 25%;
 }
 
 .hero-item:nth-child(6) {
-  background-image: url("https://wallpapers.com/images/hd/unexpected-surprise-rzzyt6ey66owp9jg.jpg");
+  background-image: url("../images/backgrounds/hulk.jpg");
   background-position: 35% 2%;
 }
 

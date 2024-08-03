@@ -68,12 +68,21 @@ li {
   display: flex;
   align-items: center;
   z-index: 999;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.3s ease;
-  backdrop-filter: blur(2px);
-  justify-content: space-between; /* Add this line */
-  padding: 0 20px; /* Add this line */
+  background: url(https://en.ephoto360.com/uploads/worigin/2019/06/03/Create_logo_3D_style_Avengers_online5cf4e529e9273_3968a9e7243d55480737a4a6fd259a11.jpg)
+    center center;
+  background-size: 100% 300%;
+  transition: top 0.3s ease, box-shadow 0.3s ease; /* Add 'top' transition */
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Scroll-up class to hide navigation bar */
+#navigationbar.scroll-up {
+  top: -100px; /* Hide the navigation bar when scrolling up */
+}
+
+#navigationbar.scroll-down {
+  top: 0; /* Show the navigation bar when scrolling down */
 }
 #navigationbar.scrolled {
   box-shadow: 0 0 10px var(--color-text);
@@ -310,7 +319,7 @@ li {
     display: none;
   }
 }
-.container {
+.hero-container {
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -318,12 +327,12 @@ li {
   background: #111;
 }
 @media (min-width: 1024px) {
-  .container {
+  .hero-container {
     flex-direction: row;
   }
 }
 
-.item {
+.hero-item {
   position: relative;
   flex: 16.6666666667vw 1 1;
   background-size: cover;
@@ -332,69 +341,69 @@ li {
   transition: 1s;
 }
 
-.item:before {
+.hero-item:before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(25deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
 }
 
-.item:not(:last-child) {
+.hero-item:not(:last-child) {
   border-bottom: 1px solid #ccc;
   animation: borderPulse 5s infinite;
 }
 @media (min-width: 1024px) {
-  .item:not(:last-child) {
+  .hero-item:not(:last-child) {
     border-right: 1px solid #ccc;
     border-bottom: none;
   }
 }
 
-.item:hover {
+.hero-item:hover {
   flex-basis: 40%;
   filter: saturate(120%);
 }
 @media (min-width: 1024px) {
-  .item:hover {
+  .hero-item:hover {
     flex-basis: 75%;
   }
 }
-.item:hover .quote {
+.hero-item:hover .hero-quote {
   opacity: 1;
   transform: translateX(0);
 }
 
-.item:nth-child(1) {
+.hero-item:nth-child(1) {
   background-image: url("https://cdn.wallpapersafari.com/41/38/ruKsD7.jpg");
   background-position: 72% 35%;
 }
 
-.item:nth-child(2) {
+.hero-item:nth-child(2) {
   background-image: url("https://fr.web.img6.acsta.net/r_1920_1080/pictures/19/06/03/11/14/3505525.jpg");
   background-position: 60% 8%;
 }
 
-.item:nth-child(3) {
+.hero-item:nth-child(3) {
   background-image: url("https://images8.alphacoders.com/101/1012160.jpg");
   background-position: 52% 8%;
 }
 
-.item:nth-child(4) {
+.hero-item:nth-child(4) {
   background-image: url("https://img1.wallspic.com/attachments/originals/6/2/8/5/6/165826-thanos_the_mad-3840x2160.jpg");
   background-position: 45% 8%;
 }
 
-.item:nth-child(5) {
+.hero-item:nth-child(5) {
   background-image: url("https://c.wallhere.com/photos/df/a3/1920x1080_px_Iron_man_Iron_Man_3_Robert_Downey_Jr_sea_Tony_Stark-514897.jpg!d");
   background-position: 45% 25%;
 }
 
-.item:nth-child(6) {
+.hero-item:nth-child(6) {
   background-image: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/05/Tilda-Swinton-as-the-Ancient-One-in-Doctor-Strange.jpg");
   background-position: 65% 2%;
 }
 
-.quote {
+.hero-quote {
   position: absolute;
   color: #fff;
   bottom: 35%;
@@ -405,20 +414,20 @@ li {
   transform: translateX(50%);
 }
 @media (min-width: 512px) {
-  .quote {
+  .hero-quote {
     left: 15%;
     bottom: 35%;
     width: 20vw;
   }
 }
 @media (min-width: 1024px) {
-  .quote {
+  .hero-quote {
     left: 15%;
     bottom: 35%;
     width: 30vw;
   }
 }
-.quote p {
+.hero-quote p {
   position: relative;
   display: inline-block;
   margin-bottom: 1.7rem;
@@ -426,25 +435,25 @@ li {
   text-wrap: balance;
   font-style: italic;
 }
-.quote p:before,
-.quote p:after {
+.hero-quote p:before,
+.hero-quote p:after {
   position: absolute;
   font-size: 5.5rem;
   opacity: 0.6;
 }
-.quote p:before {
+.hero-quote p:before {
   content: "“";
   top: 4rem;
   left: -2rem;
   transform: translate(-100%, -100%);
 }
-.quote p:after {
+.hero-quote p:after {
   content: "”";
   bottom: 2rem;
   right: -2rem;
   transform: translate(100%, 100%);
 }
-.quote span {
+.hero-quote span {
   position: absolute;
   bottom: -2rem;
   right: 0;
@@ -453,7 +462,7 @@ li {
   font-weight: bold;
   transform: translate(4rem, 100%);
 }
-.quote span:before {
+.hero-quote span:before {
   content: "—";
   margin-right: 0.7rem;
 }

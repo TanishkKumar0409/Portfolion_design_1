@@ -37,7 +37,7 @@ body {
   z-index: 100;
   transition: 0.3s;
 }
-.header.sticky{
+.header.sticky {
   background: var(--bg-color);
 }
 .logo {
@@ -46,7 +46,7 @@ body {
   color: var(--text-color);
   font-weight: 700;
 }
-.navbar{
+.navbar {
   position: relative;
 }
 .navbar a {
@@ -102,7 +102,7 @@ section {
   font-weight: 700;
   color: transparent;
   -webkit-text-stroke: 0.7px var(--main-color);
-  background-image: linear-gradient(var(--main-color),var(--main-color));
+  background-image: linear-gradient(var(--main-color), var(--main-color));
   background-repeat: no-repeat;
   background-clip: text;
   background-position: -33rem 0;
@@ -110,14 +110,14 @@ section {
   animation-delay: 2s;
 }
 
-.home-content .text-animate h3::before{
+.home-content .text-animate h3::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
   height: 100%;
-  border-right:  2px solid var(--main-color);
+  border-right: 2px solid var(--main-color);
   z-index: -1;
   animation: homeCursortext 6s linear infinite;
   animation-delay: 2s;
@@ -319,10 +319,12 @@ span {
   flex: 1 1 40rem;
 }
 .education-column .title {
+  position: relative;
   font-size: 2.5rem;
   margin: 0 0 1.5rem 2rem;
 }
 .education-column .education-box {
+  position: relative;
   border-left: 0.2rem solid var(--main-color);
 }
 .education-box .education-content {
@@ -382,6 +384,11 @@ span {
   padding-bottom: 7rem;
   background: var(--second-bg-color);
 }
+.skills h2{
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .skills .skills-row {
   display: flex;
   flex-wrap: wrap;
@@ -393,6 +400,10 @@ span {
 .skills-column .title {
   font-size: 2.5rem;
   margin: 0 0 1.5rem;
+  position: relative;
+}
+.skills-column .skills-box{
+  position: relative;
 }
 .skills-box .skills-content {
   position: relative;
@@ -468,6 +479,11 @@ span {
 .contact {
   min-height: auto;
   padding-bottom: 7rem;
+}
+.contact h2{
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .contact form {
   max-width: 70rem;
@@ -573,7 +589,7 @@ span {
 .footer-iconTop a:hover i {
   color: var(--main-color);
 }
-.animate{
+.animate {
   position: absolute;
   top: 0;
   right: 0;
@@ -582,56 +598,62 @@ span {
   background: yellow;
   z-index: 98;
 }
-.home-img.animate{
+.home-img.animate {
   width: 50%;
 }
 .logo .animate,
 .navbar .animate,
 #menu-icon .animate,
-.home.show-animate .animate{
-  animation: showRight 1s ease  forwards;
+.home.show-animate .animate {
+  animation: showRight 1s ease forwards;
   animation-delay: calc(0.3s / var(--i));
 }
-.animate.scroll{
+.animate.scroll {
   transition: 1s ease;
   transition-delay: calc(0.3s * var(--i));
   animation: none;
 }
-.about.show-animate .animate.scroll{
+.education .education-box .animate.scroll {
+  width: 105%;
+}
+.about.show-animate .animate.scroll,
+.education.show-animate .animate.scroll,
+.skills.show-animate .animate.scroll,
+.contact.show-animate .animate.scroll {
   transition-delay: calc(0.3s * var(--i));
   width: 0;
 }
-@media (max-width:1200px) {
-  html{
+@media (max-width: 1200px) {
+  html {
     font-size: 55%;
   }
 }
-@media (max-width:991px) {
- .header{
-  padding: 2rem 4%;
- }
- section{
-  padding: 10rem 4% 2rem;
- }
- .home{
-  padding: 0 4%;
- }
- .footer{
-  padding: 2rem 4%;
- }
-} 
-@media (max-width:768px) {
-  .header{
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 4%;
+  }
+  section {
+    padding: 10rem 4% 2rem;
+  }
+  .home {
+    padding: 0 4%;
+  }
+  .footer {
+    padding: 2rem 4%;
+  }
+}
+@media (max-width: 768px) {
+  .header {
     background: var(--bg-color);
   }
-  #menu-icon{
+  #menu-icon {
     display: block;
   }
-  .navbar{
+  .navbar {
     position: absolute;
     top: 100%;
-    width:100%;
-    left:-100%;
+    width: 100%;
+    left: -100%;
     padding: 1rem 4%;
     background: var(--main-color);
     box-shadow: 0 0.5rem 1rem rgba(40, 40, 40, 0.2);
@@ -639,27 +661,27 @@ span {
     transition-delay: 0.25s;
     z-index: 1;
   }
-  .navbar.active{
+  .navbar.active {
     left: 0;
     transition-delay: 0;
   }
-  .navbar .active-nav{
+  .navbar .active-nav {
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
     background: var(--bg-color);
-    border-top:1rem solid rgba(0, 0, 0, 0.2) ;
+    border-top: 1rem solid rgba(0, 0, 0, 0.2);
     z-index: -1;
     transition: 0.25s ease;
     transition-delay: 0;
   }
-  .navbar.active .active-nav{
+  .navbar.active .active-nav {
     transition-delay: 0.25s;
     left: 0;
   }
-  .navbar a{
+  .navbar a {
     display: block;
     font-size: 2rem;
     margin: 3rem 0;
@@ -667,91 +689,99 @@ span {
     transition: 0.5s ease;
     transition-delay: 0;
   }
-  .navbar.active a{
-    transform:  translateX(0);
+  .navbar.active a {
+    transform: translateX(0);
     transition-delay: 0.25s;
   }
-  .home-imgHover{
+  .home-imgHover {
     pointer-events: none;
     background: var(--bg-color);
     opacity: 0.6;
   }
 }
-@media (max-width:520px) {
-  html{
+@media (max-width: 520px) {
+  html {
     font-size: 50%;
   }
-  .home-content h1{
+  .home-content h1 {
     display: flex;
     flex-direction: column;
   }
-  .home-sci{
+  .home-sci {
     width: 160px;
   }
-  .home-sci a{
+  .home-sci a {
     width: 38px;
     height: 38px;
   }
 }
-@media (max-width:462px) {
-  .home-content h1{
+@media (max-width: 462px) {
+  .home-content h1 {
     font-size: 5.2rem;
   }
-  .education{
+  .education {
     padding: 10rem 4% 5rem 5%;
   }
-  .contact form .input-box .input-field{
+  .contact form .input-box .input-field {
     width: 100%;
   }
-  .footer{
+  .footer {
     flex-direction: column-reverse;
   }
-  .footer p{
+  .footer p {
     margin-top: 2rem;
     text-align: center;
   }
 }
-@media (max-width:371px) {
-  .home{
+@media (max-width: 371px) {
+  .home {
     justify-content: center;
   }
-  .home-content{
+  .home-content {
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
   }
-  .home-content h1{
+  .home-content h1 {
     font-size: 5rem;
   }
 }
 @keyframes homeBgtext {
-  0%,10%,100%{
+  0%,
+  10%,
+  100% {
     background-position: -28rem 0;
   }
-  65%,85%{
+  65%,
+  85% {
     background-position: 0 0;
   }
 }
 @keyframes homeCursortext {
-  0%,10%,100%{
+  0%,
+  10%,
+  100% {
     width: 0;
   }
-  65%,75%,85%{
+  65%,
+  75%,
+  85% {
     width: 100%;
     opacity: 1;
   }
-  75%,81%{
+  75%,
+  81% {
     opacity: 0;
   }
 }
 @keyframes aboutSpinner {
-  100%{
-    transform: translate(-50%,-50%) rotate(360deg);
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 @keyframes showRight {
-  100%{
+  100% {
     width: 0;
   }
 }

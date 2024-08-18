@@ -244,6 +244,7 @@ section {
   padding-bottom: 6rem;
 }
 .heading {
+  position: relative;
   font-size: 5rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -283,13 +284,17 @@ span {
   text-align: center;
 }
 .about-content h3 {
+  position: relative;
+  display: inline-block;
   font-size: 2.6rem;
 }
 .about-content p {
+  position: relative;
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
 }
 .btn-box.btns {
+  position: relative;
   display: inline-block;
   width: 15rem;
   height: 5rem;
@@ -585,7 +590,16 @@ span {
 #menu-icon .animate,
 .home.show-animate .animate{
   animation: showRight 1s ease  forwards;
-  animation-delay: calc(0.3s * var(--i));
+  animation-delay: calc(0.3s / var(--i));
+}
+.animate.scroll{
+  transition: 1s ease;
+  transition-delay: calc(0.3s * var(--i));
+  animation: none;
+}
+.about.show-animate .animate.scroll{
+  transition-delay: calc(0.3s * var(--i));
+  width: 0;
 }
 @media (max-width:1200px) {
   html{

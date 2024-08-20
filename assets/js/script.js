@@ -34,4 +34,6 @@ window.onscroll = () => {
   header.classList.toggle("sticky", window.scrollY > 100);
   menuIcon.classList.remove('fa-xmark');
   navbar.classList.remove('active');
+  let footer=document.querySelector('footer');
+  footer.classList.toggle('show-animate',this.innerHeight+this.scrollY>=document.scrollingElement.scrollHeight);
 };
